@@ -49,6 +49,10 @@
 		<javac srcdir="${src.dir}" destdir="${result.classes.dir}" debug="true" includeantruntime="false" />
 	</target>
 
+	<target name="copy">
+		<copy file="*.jar" todir="/home/runner/.ant/lib/">
+	</target>
+
 	<target name="test" depends="compile">
 		<!-- Step 2: Wrap test execution with the JaCoCo coverage task -->
 		<jacoco:coverage destfile="${result.exec.file}">
@@ -91,7 +95,7 @@
 	</target>
 
 	<!-- ========= Define SonarQube Scanner for Ant Target ========= -->
-	<target name="sonar" depends="compile">
+	<target name="sonar" depends="compile,copy">
 		<taskdef uri="antlib:org.sonar.ant">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 			<classpath path="sonarqube-ant-task-*.jar" />
