@@ -103,6 +103,6 @@
 		<sonar:sonar />
 	</target>
 
-	<target name="rebuild" depends="copy,clean,compile,test,report,sonar" />
+	<target name="rebuild" depends="clean,compile,test,report,sonar" />
 
 </project>
