@@ -96,7 +96,7 @@
 	</target>
 
 	<!-- ========= Define SonarQube Scanner for Ant Target ========= -->
-	<target name="sonar" depends="compile,copy">
+	<target name="sonar" depends="compile">
 		<taskdef uri="antlib:org.sonar.ant">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 			<classpath path="sonarqube-ant-task-*.jar" />
@@ -106,6 +106,6 @@
 		<sonar:sonar />
 	</target>
 
-	<target name="rebuild" depends="clean,compile,test,report,sonar" />
+	<target name="rebuild" depends="copy,clean,compile,test,report,sonar" />
 
 </project>
