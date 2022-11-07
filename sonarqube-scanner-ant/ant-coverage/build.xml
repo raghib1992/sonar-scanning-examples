@@ -34,11 +34,7 @@
 	<property name="sonar.java.binaries" value="target" />
 	<property name="sonar.coverage.jacoco.xmlReportPaths" value="${result.report.dir}/report.xml" />
 
-	<!-- Step 1: Import JaCoCo Ant tasks -->
-	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
-		<!-- Update the following line with the location to the jacocoant.jar -->
-		<classpath path="path/to/jacoco-0.8.7/lib/jacocoant.jar" />
-	</taskdef>
+	
 
 	<target name="clean">
 		<delete dir="${result.dir}" />
@@ -51,6 +47,11 @@
 
 	<target name="copy">
 		<copy file="*.jar" todir="/home/runner/.ant/lib/" />
+		<!-- Step 1: Import JaCoCo Ant tasks -->
+	<taskdef uri="antlib:org.jacoco.ant">
+		<!-- Update the following line with the location to the jacocoant.jar -->
+		<classpath path="jacocoant.jar" />
+	</taskdef>
 	</target>
 
 	<target name="test" depends="compile">
