@@ -50,7 +50,7 @@
 	</target>
 
 	<target name="copy">
-		<copy file="*.jar" todir="/home/runner/.ant/lib/">
+		<copy file="*.jar" todir="/home/runner/.ant/lib/" />
 	</target>
 
 	<target name="test" depends="compile">
