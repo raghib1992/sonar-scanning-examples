@@ -17,6 +17,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-   
+    - name: test
+      run: |
+        ant
+        which ant
+        ant -version
+        ls -la /home/runner/
     - name: Build with Ant
       run: ant rebuild -Dsonar.login=squ_337d69c2f86ca552c26436ccf6cf3d5e9c6bf12a -buildfile ./sonarqube-scanner-ant/ant-coverage/build.xml 

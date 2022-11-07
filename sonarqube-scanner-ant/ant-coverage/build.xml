@@ -5,9 +5,7 @@
    This program and the accompanying materials are made available under
    the terms of the Eclipse Public License 2.0 which is available at
    http://www.eclipse.org/legal/epl-2.0
-
    SPDX-License-Identifier: EPL-2.0
-
    Contributors:
       Marc R. Hoffmann - initial API and implementation
 -->
@@ -34,7 +32,11 @@
 	<property name="sonar.java.binaries" value="target" />
 	<property name="sonar.coverage.jacoco.xmlReportPaths" value="${result.report.dir}/report.xml" />
 
-	
+	<!-- Step 1: Import JaCoCo Ant tasks -->
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<!-- Update the following line with the location to the jacocoant.jar -->
+		<classpath path="path/to/jacoco-0.8.7/lib/jacocoant.jar" />
+	</taskdef>
 
 	<target name="clean">
 		<delete dir="${result.dir}" />
@@ -44,12 +46,6 @@
 		<mkdir dir="${result.classes.dir}" />
 		<javac srcdir="${src.dir}" destdir="${result.classes.dir}" debug="true" includeantruntime="false" />
 	</target>
-
-		<!-- Step 1: Import JaCoCo Ant tasks -->
-	<taskdef uri="antlib:org.jacoco.ant">
-		<!-- Update the following line with the location to the jacocoant.jar -->
-		<classpath path="jacocoant.jar" />
-	</taskdef>
 
 	<target name="test" depends="compile">
 		<!-- Step 2: Wrap test execution with the JaCoCo coverage task -->
@@ -106,3 +102,4 @@
 	<target name="rebuild" depends="clean,compile,test,report,sonar" />
 
 </project>
+sonar-
