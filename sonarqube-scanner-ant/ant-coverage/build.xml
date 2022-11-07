@@ -35,7 +35,7 @@
 	<!-- Step 1: Import JaCoCo Ant tasks -->
 	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
 		<!-- Update the following line with the location to the jacocoant.jar -->
-		<classpath path="path/to/jacoco-0.8.7/lib/jacocoant.jar" />
+		<classpath path="./jacoco-0.8.8/lib/jacocoant.jar" />
 	</taskdef>
 
 	<target name="clean">
