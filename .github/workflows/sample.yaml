@@ -19,7 +19,6 @@ jobs:
         distribution: 'temurin'
     - name: test
       run: |
-        ant
         which ant
         ant -version
         ls -la /home/runner/
