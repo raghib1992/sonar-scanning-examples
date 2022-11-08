@@ -19,5 +19,6 @@ jobs:
     - name: test
       run: |
           Copy-Item  -Path .\sonarqube-scanner-ant\ant-basic\lib\sonarqube-ant-task-2.7.0.1612.jar -Destination C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.12\lib
-    - name: Build with Ant
-      run: ant all -buildfile ./sonarqube-scanner-ant/ant-basic/build.xml -Dsonar.login=${{ secrets.SONAR_TOKEN }}   
+          echo ${{ secrets.SONAR_TOKEN }}
+    # - name: Build with Ant
+    #   run: ant all -buildfile ./sonarqube-scanner-ant/ant-basic/build.xml -Dsonar.login=${{ secrets.SONAR_TOKEN }}   
