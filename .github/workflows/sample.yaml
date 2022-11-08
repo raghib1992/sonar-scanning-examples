@@ -23,4 +23,4 @@ jobs:
         ant -version
         ls -la /home/runner/
     - name: Build with Ant
-      run: ant rebuild -Dsonar.login=squ_337d69c2f86ca552c26436ccf6cf3d5e9c6bf12a -buildfile ./sonarqube-scanner-ant/ant-basic/build.xml 
+      run: ant all -Dsonar.login=squ_337d69c2f86ca552c26436ccf6cf3d5e9c6bf12a -buildfile ./sonarqube-scanner-ant/ant-basic/build.xml 
