@@ -23,4 +23,4 @@ jobs:
     - name: Build with Ant
       run: |
           cd sonarqube-scanner-ant/ant-basic/
-          ant all -Dsonar.login=${{ secrets.SONAR_TOKEN }}   
+          ant all -Dsonar.login=squ_c82b81bbecf40c9a2cd55573a7d3408f606d847f
