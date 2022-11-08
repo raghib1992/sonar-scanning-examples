@@ -18,6 +18,6 @@ jobs:
         distribution: 'temurin'
     - name: test
       run: |
-          Copy-Item  -Path .\sonarqube-scanner-ant\ant-basic\lib\sonarqube-ant-task-2.7.0.1612.jar -Destination -C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.12\lib
+          Copy-Item  -Path .\sonarqube-scanner-ant\ant-basic\lib\sonarqube-ant-task-2.7.0.1612.jar -Destination C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.12\lib
     - name: Build with Ant
       run: ant all -Dsonar.login=squ_337d69c2f86ca552c26436ccf6cf3d5e9c6bf12a -buildfile ./sonarqube-scanner-ant/ant-basic/build.xml 
